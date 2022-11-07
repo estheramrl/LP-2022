@@ -203,9 +203,11 @@ for produto in mercadorias:
 '''
 numero = []
 numero2 = []
+
 def popular_lista(lista, qtde):
     for i in range(qtde):
         lista.append(int(input(f'Elemento da posição {i}: ')))
+
 
 def exibir_lista(lista):
     for elemento in lista:
@@ -254,6 +256,41 @@ exibir_lista(lf)
 #11. Construa um programa que leia dados para uma lista de 100 elementos inteiros.
 #Imprimir o maior e o menor, sem ordenar, o percentual de números pares e a
 #média dos elementos da lista.
+
+liste = []
+
+def popular_lista(lista, qntd):
+    for i in range(qntd):
+        lista.append(random.randrange(qntd))
+
+def media_lista(lista, qntd):
+    cont = 0
+    for valor in lista:
+        cont += valor
+    media = cont/qntd
+    return media
+        
+
+popular_lista(liste, 100)
+print(liste)
+print(f'Media: {media_lista(liste, 100)}')
+
+maior = liste[0]
+menor = liste[0]
+for numero in liste:
+    if numero > maior:
+       maior = numero
+    if numero < menor:
+        menor = numero
+print(f'O maior numero da lista é: {maior}')
+print(f'O menor numero da lista é: {menor}') 
+
+cont = 0
+for numero in liste:
+    if numero%2 == 0:
+        cont += 1    
+percentual =  cont/len(liste)
+print(f'O percentual de numero pares é: {percentual*100}%')    
 
 
 
